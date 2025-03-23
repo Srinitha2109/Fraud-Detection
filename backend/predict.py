@@ -8,8 +8,8 @@ model = joblib.load("backend/xgb_model.pkl")
 new_transaction = pd.DataFrame({
     "user_id": [2],
     "amount": [12000],
-    "transaction_type": [1],  # Encoded category
-    "location": [2]  # Encoded location
+    "transaction_type": [1],  
+    "location": [2]  
 })
 
 # Predict Fraud

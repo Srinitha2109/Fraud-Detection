@@ -3,8 +3,8 @@ import mysql.connector
 # Connect to MySQL
 conn = mysql.connector.connect(
     host="localhost",
-    user="root",  # 🔹 Replace with your MySQL username
-    password="sql@1234",  # 🔹 Replace with your MySQL password
+    user="root",  
+    password="sql@1234",  
     database="fraud_detection"
 )
 cursor = conn.cursor(dictionary=True)
@@ -17,12 +17,12 @@ transactions = cursor.fetchall()
 def is_fraudulent(transaction):
     high_risk_countries = ["Russia", "Nigeria", "Hong Kong"]
     
-    if transaction["amount"] > 10000:  # Rule 1: High-value transaction
+    if transaction["amount"] > 10000:  
         return True
-    if transaction["location"] in high_risk_countries:  # Rule 2: Suspicious location
+    if transaction["location"] in high_risk_countries:  
         return True
     if transaction["transaction_type"] == "Wire Transfer" and transaction["location"] not in ["New York", "Los Angeles"]:
-        return True  # Rule 3: Wire transfers from unusual locations
+        return True  
     return False
 
 # Apply fraud detection
