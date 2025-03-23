@@ -1,0 +1,16 @@
+# Ignore model files
+backend/model.pkl
+backend/xgb_model.pkl
+
+# Ignore dataset files
+data/*.csv
+data/*.txt
+
+# Ignore generated visualization images
+visualizations/*.png
+
+# Ignore Python cache and virtual environment
+__pycache__/
+*.pyc
+*.pyo
+
